@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', async () => {
+const mostrarPokemon = async () => {
 
     const image = document.querySelector('.random-image');
     let numberRandom = Math.floor(Math.random() * 151) + 1;
@@ -11,9 +11,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         image.src = pokemon.sprites.front_default;
         image.alt = pokemon.name;
 
-
-
-
     } catch (error) {
         console.error('Error fetching characters:', error);
         image.src = '';
@@ -21,4 +18,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
 
+};
+
+window.addEventListener("DOMContentLoaded", () => {
+    mostrarPokemon();
 });
